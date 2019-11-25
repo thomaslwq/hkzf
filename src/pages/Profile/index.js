@@ -1,6 +1,6 @@
 import React, {Fragment,Component } from 'react'
 
-export default class index extends Component {
+export default class Profile extends Component {
     render() {
         return (
             <Fragment>
