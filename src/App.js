@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{ Fragment } from "react"
+import { HashRouter as Router,Route} from "react-router-dom"
+import Home from "./pages/Home"
+import List from "./pages/List"
+import News from "./pages/News"
+import Profile from "./pages/Profile"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+ export default class TabBarExample extends React.Component {
 
-export default App;
+      render(){
+        return <Fragment>
+          <Router>
+            <Route path="/" exact render={()=> <Home/>}></Route>
+            <Route path="/List" exact render={()=> <List/>}></Route>
+            <Route path="/News" exact render={()=><News/>}></Route>
+            <Route path="/Profile" exact render={()=><Profile/>}></Route>
+          </Router>
+        </Fragment>
+      }
+
+  }
