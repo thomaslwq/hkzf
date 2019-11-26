@@ -1,9 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import Axios from "axios"
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+//1. 配置一个通用的axios的实例
+export  let axios = Axios.create({
+  baseURL:""
+})
+
+axios.interceptors.request.use(function(config){
+
+  return config;
+
+},function(error){
+  return Promise.reject(error)
+})
+axios.interceptors.response.use(function(res){
+
+  return response.data;
+},function(error){
+  return Promise.reject(error);
+})
+
+

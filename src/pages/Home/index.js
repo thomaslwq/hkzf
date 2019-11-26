@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react'
 import { Carousel } from "antd-mobile"
-import axios from "axios"
+import { axios } from "../../utils/request"
+import "./index.scss"
 export default class Home extends Component {
 
     state = {
@@ -9,10 +10,9 @@ export default class Home extends Component {
     }
 
     componentDidMount() {
-
-        axios.get("http://hkzf.zbztb.cn/home/swiper").then(res => {
+        axios.get("/home/swiper").then(res => {
             this.setState({
-                swiperList: res.data.body
+                swiperList: res.body
             });
         })
     }
@@ -24,11 +24,11 @@ export default class Home extends Component {
                 <div className="hk_home">
                     <div className="home_swiper">
                         {
-                           swiperList.length && <Carousel
+                            swiperList.length && <Carousel
                                 autoplay
                                 infinite
                             >
-                                { swiperList.map(val => (
+                                {swiperList.map(val => (
                                     <a
                                         key={val}
                                         href="http://www.alipay.com"
