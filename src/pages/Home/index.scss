@@ -2,6 +2,125 @@
     height: 100vw;
     background-color: white;
     .home_swiper {
-
+      position: relative;
     }
+    .home_nav {
+      display: flex;
+      background-color: white;
+      .nav_item {
+        padding:15px;
+        flex:1;
+        text-align: center;
+        font-size:14px;
+        color:#666;
+        img {
+          margin: 0 auto;
+          width: 80%;
+        }
+    
+        p {
+    
+        }
+      }
+    }
+    .home_group {
+      .home_group_title {
+        display: flex;
+        justify-content: space-between;
+        font-size:14px;
+        color:#666;
+        span:nth-child(1) {
+          font-weight: 600;
+          font-size:15px;
+        }
+      }
+    
+      .home_group_content {
+        text-align: center;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: white;
+        .home_group_item {
+          display: flex;
+           width: 50%;
+           border: 1px solid #f6f5f7;
+          .home_group_item_name {
+             flex:1;
+            .home_group_item_title {
+              font-weight: 600;
+              font-size:15px;
+            }
+    
+            .home_group_item_desc {
+              font-size:14px;
+            }
+          }
+    
+          .home_group_item_img {
+            flex:1;
+            img {
+              
+            }
+          }
+        }
+      }
+    }
+
+    .home_news {
+      padding:10px;
+      background-color: white;
+      .home_news_title {
+        span {
+          font-weight: 600;
+          color:#000;
+          font-size:15px;
+  
+        }
+      }
+    
+      .home_news_content {
+        padding:10px;
+        .home_news_item {
+          display: flex;
+
+          border-bottom: 1px solid #ddd;
+          .home_news_item_img {
+            flex:1;
+            img {
+              padding:10px
+            }
+          }
+    
+          .home_news_item_desc {
+            flex:4;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .home_news_item_title {
+              text-align: center;
+              font-weight: 600;
+              color: #000;
+              font-size: 14px;
+              padding: 20px;
+            }
+    
+            .home_news_item_bottom {
+              display:flex;
+              justify-content: space-between;
+              font-size:12px;
+              color:#ddd;
+              .home_news_item_from {
+    
+              }
+    
+              .home_news_item_date {
+    
+              }
+            }
+          }
+        }
+      }
+    }
+
   }
