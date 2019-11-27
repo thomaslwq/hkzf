@@ -5,8 +5,26 @@ import List from "./pages/List"
 import News from "./pages/News"
 import Profile from "./pages/Profile"
 import HKLayout from "./components/HKLayout"
+import { getCityNameAction } from './store/actionCreator'
+import store from "./store"
+
 
  export default class TabBarExample extends React.Component {
+
+
+      componentDidMount(){
+        this.getLocalCity();
+      }
+      getLocalCity = (params) => {
+        let map = new window.BMap.LocalCity();
+        map.get((result) => {
+          const cityName = result.name;
+          store.dispatch(getCityNameAction(cityName));
+        }
+        )
+
+      }
+      
 
       render(){
         return <Fragment>

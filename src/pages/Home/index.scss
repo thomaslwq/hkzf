@@ -1,6 +1,16 @@
 .hk_home {
     height: 100vw;
     background-color: white;
+    position: relative;
+    .home_search_input{
+      position:absolute;
+      top:20px;
+      left:50%;
+      transform: translate(-50%);
+      width:100%;
+      z-index:100;
+    }
+
     .home_swiper {
       position: relative;
     }

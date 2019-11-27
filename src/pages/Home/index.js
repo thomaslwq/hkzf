@@ -5,9 +5,9 @@ import nav1 from "../../assets/images/nav-1.png"
 import nav2 from "../../assets/images/nav-2.png"
 import nav3 from "../../assets/images/nav-3.png"
 import nav4 from "../../assets/images/nav-4.png"
+import SearchInput from "../../components/SearchInput"
 import "./index.scss"
 import { REACT_APP_API_URL } from '../../utils/urls'
-
 export default class Home extends Component {
 
     state = {
@@ -26,6 +26,7 @@ export default class Home extends Component {
     }
 
     componentDidMount() {
+
         axios.get("/home/swiper").then(res => {
             this.setState({
                 swiperList: res.body
@@ -49,6 +50,9 @@ export default class Home extends Component {
         return (
             <Fragment>
                 <div className="hk_home">
+                    <div className="home_search_input">
+                        <SearchInput/>
+                    </div>
                     {/* 轮播图开始 */}
                     <div className="home_swiper">
                         {
@@ -125,7 +129,7 @@ export default class Home extends Component {
                         <div className="home_news_content">
                             {
                                 this.state.news.map(v =>
-                                    <div className="home_news_item">
+                                    <div key={v.id} className="home_news_item">
                                         <div className="home_news_item_img">
                                             <img src={REACT_APP_API_URL + v.imgSrc}></img>
                                         </div>

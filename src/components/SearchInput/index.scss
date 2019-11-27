@@ -1,0 +1,53 @@
+.search_input {
+    height: 35px;
+    display: flex;
+    overflow: hidden;
+    .si_city {
+
+        display: flex;
+        flex:7;
+        align-items: center;
+        background-color:white;
+      .si_city_name {
+        display:flex;
+        justify-content: center;
+        flex:2;
+        border-right:1px solid #ccc;
+        align-items: center;
+        span {
+  
+        }
+  
+        i.iconfont.icon-arrow {
+  
+        }
+      }
+  
+      .si_city_inp {
+        align-items: center;
+        flex:6;
+        padding-left:15px;
+        color:#666;
+        align-items: center;
+        .icon-seach {
+  
+        }
+  
+        span {
+  
+        }
+      }
+    }
+  
+    .si_map {
+    color:white;
+      flex:1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .icon-map {
+          color:#fff;
+          font-size:24px;
+      }
+    }
+  }
