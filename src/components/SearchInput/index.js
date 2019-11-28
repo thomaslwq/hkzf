@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import "./index.scss"
 import store from "../../store"
-export default class Index extends Component {
+import { withRouter } from 'react-router-dom'
+ class Index extends Component {
     state = {
         cityName:""
     }
@@ -28,7 +29,10 @@ export default class Index extends Component {
             <Fragment>
                 <div className="search_input">
                     <div className="si_city">
-                        <div className="si_city_name">
+                        <div className="si_city_name" onClick={(params) => {
+                            this.props.history.push("/CityList")
+                        }
+                        }>
                             <span>{ this.state.cityName}</span>
                             <i className="iconfont icon-arrow"></i>
                         </div>
@@ -37,7 +41,10 @@ export default class Index extends Component {
                             <span>请输入小区或地址</span>
                         </div>
                     </div>
-                    <div className="si_map">
+                    <div className="si_map" onClick={ (params) => {
+                        this.props.history.push("/BMap")
+                    }
+                    }>
                         <i className="iconfont icon-map"></i>
                     </div>
                 </div>
@@ -46,3 +53,5 @@ export default class Index extends Component {
         )
     }
 }
+
+export default withRouter(Index)
