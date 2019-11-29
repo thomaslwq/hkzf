@@ -18,12 +18,14 @@ import { List, AutoSizer } from "react-virtualized"
 import "./index.scss"
 class Index extends Component {
     state = {
-        totalCity: []  //放置了当前城市 热门城市 城市列表
+        totalCity: [], //放置了当前城市 热门城市 城市列表
+        keyArr: [],//放置了字母的首字母缩写
+        selectIndex:0 //被选中的行的位置
     }
 
     constructor(props) {
         super(props);
-
+        this.MainList = React.createRef();
     }
     componentDidMount() {
         const { mapReducer } = store.getState();
@@ -84,9 +86,11 @@ class Index extends Component {
                 totalCity[index][firstLetter].push(v.label)
             }
         });
-
+        let keyArr = totalCity.map(v => Object.keys(v)[0]);
+        keyArr[0] = "#";
+        keyArr[1] = "热";
         this.setState({
-            totalCity
+            totalCity, keyArr
         })
     }
     rowRenderer = ({ key, index, style }) => {
@@ -101,8 +105,8 @@ class Index extends Component {
                 </div>
                 <div className="city_list_content" >
                     {
-                        item[item_name].map((v,i) => {
-                            return <div key={i}  onClick={ this.itemOnClick.bind(this,v)} className="list_item">{v}</div>
+                        item[item_name].map((v, i) => {
+                            return <div key={i} onClick={this.itemOnClick.bind(this, v)} className="list_item">{v}</div>
                         })
                     }
                 </div>
@@ -113,11 +117,23 @@ class Index extends Component {
         store.dispatch(getCityNameAction(v));
         window.history.go(-1);
     }
-    
-    rowHeight = ( { index }) => {
+
+    rowHeight = ({ index }) => {
         let item = this.state.totalCity[index];
         return (Object.values(item)[0].length + 1) * 40;
     }
+    onKeyLetterClick = (index) => {
+        this.MainList.current.scrollToRow(index);
+        this.setState({
+            selectIndex:index
+        })
+    }
+    onRowsRendered = ({startIndex}) => {
+        this.setState({
+            selectIndex:startIndex
+        })
+    }
+    
 
     render() {
         return (
@@ -127,20 +143,38 @@ class Index extends Component {
                     icon={<Icon type="left" />}
                     onLeftClick={() => this.props.history.go(-1)}
                 >城市选择</NavBar>
+                {/* 城市列表开始 */}
                 <div className="list_content" >
                     <AutoSizer>
                         {({ height, width }) => (
                             <List
+                                ref={this.MainList} //非受控表单
                                 height={height}
                                 rowCount={this.state.totalCity.length}
                                 rowHeight={this.rowHeight}
                                 rowRenderer={this.rowRenderer}
+                                onRowsRendered={this.onRowsRendered}
                                 width={width}
+                                scrollToAlignment="start" // 对齐方式， 不加的话 点击右侧的字母，左侧 列表 滚动的位置不对
                             />
                         )}
                     </AutoSizer>
 
                 </div>
+                {/* 城市列表结束 */}
+                {/* 首字母缩写开始 */}
+                <div className="key_list">
+                    {
+                        this.state.keyArr.map( (v,i) => {
+                        return <div 
+                        onClick={this.onKeyLetterClick.bind(this,i)}
+                        className={"key_item" + " " + ( i ===               this.state.selectIndex ? "active":"")} key={v}>
+                        {v}</div>
+                        })
+                    }
+                </div>
+
+                {/* 首字母缩写结束 */}
             </div>
         );
     }
