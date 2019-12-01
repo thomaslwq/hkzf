@@ -36,7 +36,6 @@ class HKLayout extends Component {
                             key="List"
                             selected={this.props.match.url === '/List'}
                             onPress={() => {
-
                                 this.props.history.push("/List")
                             }}
                         >

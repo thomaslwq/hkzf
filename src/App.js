@@ -21,7 +21,7 @@ import store from "./store"
       getLocalCity = (params) => {
         let map = new window.BMap.LocalCity();
         map.get((result) => {
-          const cityName = result.name;
+          const cityName = "广州" || result.name;
           store.dispatch(getCityNameAction(cityName));
         }
         )

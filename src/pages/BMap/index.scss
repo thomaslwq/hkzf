@@ -1,0 +1,103 @@
+.hk_map {
+.hk_map_info{
+  height:calc(100vh - 45px);
+  display:flex;
+  flex-direction: column;
+  .hk_map_content {
+      flex:1;
+      .circle{
+        height: 60px;
+        width:60px;
+        display: flex;
+        align-items: center;
+        background-color:yellowgreen;
+        border-radius: 50%;
+        border: 1px solid currentColor;
+        justify-content: center;
+
+      }
+      .rect{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color:yellowgreen;
+        color:#fff;
+        padding:3px;
+      }
+    }
+  
+  .house_info_list{
+    height:0;
+    width:100%;
+    overflow: hidden;
+    transition: height 0.5s;
+    .house_info_list_title{
+      padding:10px;
+      height: 20px;
+      display:flex;
+
+      justify-content: space-between;
+      background-color:#ccc;
+      span:nth-child(1){
+        font-weight: 600;
+        font-size:16px;
+      }
+      span:nth-child(2){
+        font-size:14px;
+        color:#666
+      }
+    }
+    .house_info_list_content {
+      background-color:#fff;
+      padding:10px;
+      overflow: auto;
+      height:calc(40vh - 20px);
+      .house_info_item {
+        display: flex;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+        .item_img_wrap {
+          flex:1;
+          padding:20px;
+          img {
+            border-radius:5px;
+            width:102px;
+            height:80px;
+          }
+        }
+    
+        .item_content {
+          padding:20px;
+          flex:2;
+          .houseinfo1 {
+            font-weight: 600;
+            font-size:16px
+          }
+    
+          .houseinfo2 {
+            font-size:14px;
+            color:#ccc;
+          }
+    
+          .houseinfo3 {
+            span {
+              font-size:12px;
+              color:green;
+            }
+          }
+    
+          .houseinfo4 {
+            color:red;
+            font-size:16px;
+          }
+        }
+      }
+    }
+
+  }
+}
+  .show_house_info{
+    height:40vh !important;;
+  }
+  }

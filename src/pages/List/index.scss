@@ -1,0 +1,64 @@
+.hk_house_list {
+
+    .hk_house_list_header {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: calc(100vw - 60px);
+        background-color: #ccc;
+        padding: 5px;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .hk_house_list_content {
+        height: calc(100vw - 150px);
+        overflow: hidden;
+
+        .hk_house_list_item {
+            display: flex;
+            padding:10px;
+            border-bottom: 1px solid #ccc;
+            justify-content: center;
+            align-items: center;
+            .img_wrap {
+                flex: 1;
+                img {
+                    padding:5px;
+                    width: 200px;
+                    height: 100px;
+                }
+            }
+
+            .item_content {
+                padding:5px;
+                flex: 8;
+                .houseInfo1 {
+                    font-weight: 600;
+                    font-size:16px;
+                }
+
+                .houseInfo2 {
+                    color:#ccc;
+                    font-size:14px;
+                }
+
+                .houseInfo3 {
+                    font-size:12px;
+                    span {
+                        color:green;
+
+                    }
+                }
+
+                .houseInfo4 {
+                    color:red;
+                    font-size:14px;
+                }
+            }
+
+
+        }
+    }
+
+}

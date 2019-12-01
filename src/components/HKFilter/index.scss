@@ -1,0 +1,146 @@
+.hk_filter_list {
+    .hk_filter_list_title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        height: 50px;
+        border-bottom: 1px solid #ccc;
+
+        .filter_list_item {
+            flex: 1;
+            text-align: center;
+            font-size: 16px;
+            padding: 10px;
+
+            span {
+                i.iconfont.icon-arrow {
+                    color: #ccc;
+                }
+
+            }
+
+        }
+
+        .active {
+            color: green;
+        }
+
+    }
+
+
+    .hk_filter_list_content {
+        .normal_filter {
+            .normal_filter_btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .normal_filter_btn_cancel {
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex: 1;
+
+                    span {
+                        color: green
+                    }
+
+                }
+
+                .normal_filter_btn_confirm {
+                    flex: 2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 40px;
+                    background-color: green;
+
+                    span {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .filter_other {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+
+        .filter_other_mask {
+            flex: 2;
+            background-color: rgba(0, 0, 0, .5);
+
+        }
+
+        .filter_other_main {
+            flex: 8;
+            background-color: white;
+            height: 100vh;
+
+            .filter_other_list {
+                padding: 10px;
+                overflow: auto;
+                height: calc(100vh - 50px);
+
+                .filter_other_list_item {
+                    .filter_other_list_item_name {
+                        font-size: 16px;
+                        padding: 5px;
+                    }
+
+                    border-bottom: 1px solid #ccc;
+
+                    .filter_content_item {
+                        display: flex;
+                        flex-wrap: wrap;
+                        .active{
+                            background-color: green;
+                        }
+                        .filter_content_item_label {
+                            height: 35px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border: 1px solid #ddd;
+                            margin: 5px 18px;
+                            width: 20%;
+                        }
+                    }
+                }
+            }
+
+            .filterOtherMainBtn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .filterOtherClear {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex: 3;
+                    height: 40px;
+                    color: green;
+                }
+
+                .filterOtherComfirm {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex: 7;
+                    height: 40px;
+                    background-color: green;
+                    color: white;
+                }
+            }
+        }
+    }
+
+}
