@@ -23,10 +23,6 @@ export default class Index extends Component {
         house_list: []
     }
 
-    constructor(props) {
-        super(props);
-
-    }
     QueryParams = {
         //开始数
         start: 1,

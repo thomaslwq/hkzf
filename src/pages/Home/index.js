@@ -112,7 +112,7 @@ export default class Home extends Component {
                                             <div className="home_group_item_desc">{v.desc}</div>
                                         </div>
                                         <div className="home_group_item_img">
-                                            <img src={REACT_APP_API_URL + v.imgSrc}></img>
+                                            <img src={REACT_APP_API_URL + v.imgSrc} alt=""></img>
                                         </div>
                                     </div>
                                 )
@@ -131,7 +131,7 @@ export default class Home extends Component {
                                 this.state.news.map(v =>
                                     <div key={v.id} className="home_news_item">
                                         <div className="home_news_item_img">
-                                            <img src={REACT_APP_API_URL + v.imgSrc}></img>
+                                            <img src={REACT_APP_API_URL + v.imgSrc} alt=""></img>
                                         </div>
                                         <div className="home_news_item_desc">
                                             <div className="home_news_item_title">

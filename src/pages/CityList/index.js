@@ -168,7 +168,7 @@ class Index extends Component {
                         this.state.keyArr.map( (v,i) => {
                         return <div 
                         onClick={this.onKeyLetterClick.bind(this,i)}
-                        className={"key_item" + " " + ( i ===               this.state.selectIndex ? "active":"")} key={v}>
+                        className={"key_item " + ( i===this.state.selectIndex ? "active":"")} key={v}>
                         {v}</div>
                         })
                     }

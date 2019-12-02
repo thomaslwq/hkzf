@@ -42,7 +42,7 @@ export default class Index extends Component {
         this.map.clearOverlays();
         //把数据渲染到地图上面
         //已经点击过一次了
-        if (this.Sites[this.SiteIndex].zoom != this.Sites[0].zoom) {
+        if (this.Sites[this.SiteIndex].zoom !== this.Sites[0].zoom) {
             let point = new BMap.Point(cityObj.coord.longitude, cityObj.coord.latitude);
             this.map.centerAndZoom(point, this.Sites[this.SiteIndex].zoom)
 
@@ -54,7 +54,7 @@ export default class Index extends Component {
                 offset: new BMap.Size(0, 0)
             }
             let label = "";
-            if (this.Sites[this.SiteIndex].shape == "circle")
+            if (this.Sites[this.SiteIndex].shape === "circle")
                 label = new BMap.Label("<div class='circle'><span>" + e.label + "<span><br/>" + e.count + "套</div>", opts);
             else
                 label = new BMap.Label("<div class='rect'><span>" + e.label + "<span><br/>" + e.count + "套</div>", opts);

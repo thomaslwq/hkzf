@@ -116,7 +116,7 @@ export default class index extends Component {
     }
     
     renderFilterContent() {
-        let { selectIndex, filter_list } = this.state;
+        let { selectIndex } = this.state;
         if (selectIndex === -1) {
             //没有被选中
             return <Fragment></Fragment>
